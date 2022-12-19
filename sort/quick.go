@@ -14,8 +14,7 @@ func quick(arr []int, low, high int) {
 }
 
 func partition(arr []int, low, high int) int {
-	pivot := arr[low]
-	i := low
+	pivot, i := arr[low], low
 	for j := low + 1; j <= high; j++ {
 		if arr[j] <= pivot {
 			i++
