@@ -3,17 +3,18 @@ package sort
 import (
 	"reflect"
 	"testing"
+
+	"golang.org/x/exp/constraints"
 )
 
 func TestBubble(t *testing.T) {
-	// given
-	const size = 100
-
-	tests := []struct {
+	type tc[T constraints.Ordered] struct {
 		name string
-		arr  []int
-		want []int
-	}{
+		arr  []T
+		want []T
+	}
+
+	tests := []tc[int]{
 		{
 			name: "success case: even len arr",
 			arr:  []int{10, 9, 8, 7, 6, 5, 4, 3, 2, 1},

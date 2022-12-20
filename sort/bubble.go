@@ -1,6 +1,8 @@
 package sort
 
-func Bubble(arr []int) {
+import "golang.org/x/exp/constraints"
+
+func Bubble[T constraints.Ordered](arr []T) {
 	for i := 0; i < len(arr)-1; i++ {
 		swapped := false
 		for j := 0; j < len(arr)-1; j++ {
