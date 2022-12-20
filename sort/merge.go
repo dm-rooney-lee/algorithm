@@ -1,6 +1,8 @@
 package sort
 
-func Merge(arr []int) []int {
+import "golang.org/x/exp/constraints"
+
+func Merge[T constraints.Ordered](arr []T) []T {
 	if len(arr) == 1 {
 		return arr
 	}
@@ -11,8 +13,8 @@ func Merge(arr []int) []int {
 	return merge(left, right)
 }
 
-func merge(left, right []int) []int {
-	arr := make([]int, 0, len(left)+len(right))
+func merge[T constraints.Ordered](left, right []T) []T {
+	arr := make([]T, 0, len(left)+len(right))
 	i, j := 0, 0
 	for i < len(left) || j < len(right) {
 		if i == len(left) {
