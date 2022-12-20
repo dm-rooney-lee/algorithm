@@ -37,7 +37,7 @@ func TestMerge(t *testing.T) {
 
 func BenchmarkMerge(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		arr := setupBench(1000)
+		arr := setupBench(testSize)
 		_ = Merge(arr)
 	}
 }

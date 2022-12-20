@@ -7,6 +7,8 @@ import (
 	"golang.org/x/exp/constraints"
 )
 
+const testSize = 1000
+
 func TestBubble(t *testing.T) {
 	type tc[T constraints.Ordered] struct {
 		name string
@@ -38,7 +40,7 @@ func TestBubble(t *testing.T) {
 
 func BenchmarkBubble(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		arr := setupBench(1000)
+		arr := setupBench(testSize)
 		Bubble(arr)
 	}
 }

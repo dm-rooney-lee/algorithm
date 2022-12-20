@@ -42,7 +42,7 @@ func TestInsertion(t *testing.T) {
 
 func BenchmarkInsertion(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		arr := setupBench(1000)
+		arr := setupBench(testSize)
 		Insertion(arr)
 	}
 }

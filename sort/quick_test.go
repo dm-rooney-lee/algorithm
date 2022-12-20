@@ -38,7 +38,7 @@ func TestQuick(t *testing.T) {
 
 func BenchmarkQuick(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		arr := setupBench(1000)
+		arr := setupBench(testSize)
 		Quick(arr)
 	}
 }

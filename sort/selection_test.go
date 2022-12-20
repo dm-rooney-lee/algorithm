@@ -38,7 +38,7 @@ func TestSelection(t *testing.T) {
 
 func BenchmarkSelection(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		arr := setupBench(1000)
+		arr := setupBench(testSize)
 		Selection(arr)
 	}
 }
