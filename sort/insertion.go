@@ -1,6 +1,8 @@
 package sort
 
-func Insertion(arr []int) {
+import "golang.org/x/exp/constraints"
+
+func Insertion[T constraints.Ordered](arr []T) {
 	for i := 1; i < len(arr); i++ {
 		temp, j := arr[i], i-1
 		for ; j >= 0 && temp < arr[j]; j-- {

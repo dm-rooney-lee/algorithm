@@ -3,9 +3,17 @@ package sort
 import (
 	"reflect"
 	"testing"
+
+	"golang.org/x/exp/constraints"
 )
 
 func TestInsertion(t *testing.T) {
+	type tc[T constraints.Ordered] struct {
+		name string
+		arr  []T
+		want []T
+	}
+
 	tests := []struct {
 		name string
 		arr  []int
