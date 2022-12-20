@@ -1,10 +1,12 @@
 package sort
 
-func Quick(arr []int) {
+import "golang.org/x/exp/constraints"
+
+func Quick[T constraints.Ordered](arr []T) {
 	quick(arr, 0, len(arr)-1)
 }
 
-func quick(arr []int, low, high int) {
+func quick[T constraints.Ordered](arr []T, low, high int) {
 	if low < high {
 		pi := partition(arr, low, high)
 
@@ -13,7 +15,7 @@ func quick(arr []int, low, high int) {
 	}
 }
 
-func partition(arr []int, low, high int) int {
+func partition[T constraints.Ordered](arr []T, low, high int) int {
 	pivot, i := arr[low], low
 	for j := low + 1; j <= high; j++ {
 		if arr[j] <= pivot {
